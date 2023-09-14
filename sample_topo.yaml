@@ -1,0 +1,63 @@
+name: banksample
+components:
+  - name: iDeal
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:receive-order
+    environment: urn:stackpack:common:environment:production
+  - name: Authentication
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:receive-order
+    environment: urn:stackpack:common:environment:production
+  - name: Universal Payment Engine
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:process-order
+    environment: urn:stackpack:common:environment:production
+  - name: Global Payment Services
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:process-order
+    environment: urn:stackpack:common:environment:production
+  - name: Risk Assessment
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:process-order
+    environment: urn:stackpack:common:environment:production
+  - name: SWIFT
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:process-order
+    environment: urn:stackpack:common:environment:production
+  - name: Forex
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:process-order
+    environment: urn:stackpack:common:environment:production
+  - name: Global Payment Platform
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:process-order
+    environment: urn:stackpack:common:environment:production
+  - name: Central Payment Provider
+    type: Banking Application
+    layer: urn:stackpack:banking:layer:payments
+    domain: urn:stackpack:banking:domain:external
+    environment: urn:stackpack:common:environment:production
+relations:
+  - source: Universal Payment Engine
+    target: Authentication
+    type: uses
+  - source: Universal Payment Engine
+    target: Global Payment Services
+    type: uses
+  - source: Universal Payment Engine
+    target: Risk Assessment
+    type: uses
+  - source: Universal Payment Engine
+    target: Global Payment Platform
+    type: uses
+  - source: Universal Payment Engine
+    target: Central Payment Provider
+    type: uses
